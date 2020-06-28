@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view>
+
+  <form bindsubmit="startsearch">
+    <input class="input" placeholder="请输入关键字:" name="key" ></input>
+    <button form-type="submit">查询</button>
+  </form>
+  
+  <block wx:if="{{finish}}">
+    
+    <text>共有{{restitle.length}}条搜索结果</text>
+    <view class="line"></view>
+    <view wx:for="{{restitle}}">
+    
+      {{respoembeforekey[index]}}<text class="key">{{key}}</text>{{respoemafterkey[index]}}<text class="titleandauthor">--{{restitle[index]}} {{resauthor[index]}}</text>
+
+      <view class="line"></view>
+    
+    </view>
+
+    
+
+  </block>
+ 
+
+</view>
